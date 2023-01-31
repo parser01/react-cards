@@ -16,7 +16,7 @@ function App() {
 		return a.order > b.order ? 1 : -1;
 	};
 
-	const dragStart = (event, card) => {
+	const dragStart = (card) => {
 		setCurrentCard(card);
 	};
 
@@ -55,7 +55,7 @@ function App() {
 						className="card"
 						key={card.id}
 						draggable
-						onDragStart={(event) => dragStart(event, card)}
+						onDragStart={() => dragStart(card)}
 						onDragLeave={dragLeave}
 						onDragOver={dragOver}
 						onDrop={(event) => drop(event, card)}
